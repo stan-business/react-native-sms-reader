@@ -1,13 +1,16 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-sms-reader';
+import SMSReader from 'react-native-sms-reader';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const [result] = React.useState<number | undefined>();
 
   React.useEffect(() => {
-    multiply(3, 7).then(setResult);
+    // listen to SMS coming from the sender test
+    SMSReader.listenOTP('test');
+    // remove the SMS listener
+    SMSReader.removeOTPListener();
   }, []);
 
   return (

@@ -1,4 +1,4 @@
-package com.smsreader;
+package com.rnsmsreader;
 
 import androidx.annotation.Nullable;
 
@@ -11,13 +11,13 @@ import com.facebook.react.TurboReactPackage;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SmsReaderPackage extends TurboReactPackage {
+public class RNSMSReaderPackage extends TurboReactPackage {
 
   @Nullable
   @Override
   public NativeModule getModule(String name, ReactApplicationContext reactContext) {
-    if (name.equals(SmsReaderModule.NAME)) {
-      return new SmsReaderModule(reactContext);
+    if (name.equals(RNSMSReaderModule.NAME)) {
+      return new RNSMSReaderModule(reactContext);
     } else {
       return null;
     }
@@ -29,10 +29,10 @@ public class SmsReaderPackage extends TurboReactPackage {
       final Map<String, ReactModuleInfo> moduleInfos = new HashMap<>();
       boolean isTurboModule = BuildConfig.IS_NEW_ARCHITECTURE_ENABLED;
       moduleInfos.put(
-              SmsReaderModule.NAME,
+              RNSMSReaderModule.NAME,
               new ReactModuleInfo(
-                      SmsReaderModule.NAME,
-                      SmsReaderModule.NAME,
+                      RNSMSReaderModule.NAME,
+                      RNSMSReaderModule.NAME,
                       false, // canOverrideExistingModule
                       false, // needsEagerInit
                       true, // hasConstants

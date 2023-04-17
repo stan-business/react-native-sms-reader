@@ -8,6 +8,4 @@ abstract class SmsReaderSpec extends ReactContextBaseJavaModule {
   SmsReaderSpec(ReactApplicationContext context) {
     super(context);
   }
-
-  public abstract void multiply(double a, double b, Promise promise);
 }

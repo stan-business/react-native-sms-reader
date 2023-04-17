@@ -13,7 +13,7 @@ const SmsReaderModule = isTurboModuleEnabled
   ? require('./NativeSmsReader').default
   : NativeModules.SmsReader;
 
-const SmsReader = SmsReaderModule
+const RNSMSReader = SmsReaderModule
   ? SmsReaderModule
   : new Proxy(
       {},
@@ -24,6 +24,18 @@ const SmsReader = SmsReaderModule
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return SmsReader.multiply(a, b);
+export default class SMSUserConsent {
+  static listenOTP(sender: string) {
+    if (Platform.OS !== 'ios' && Platform.OS !== 'android') {
+      return false;
+    }
+    return RNSMSReader.listenOTP(sender);
+  }
+
+  static removeOTPListener() {
+    if (Platform.OS !== 'ios' && Platform.OS !== 'android') {
+      return false;
+    }
+    return RNSMSReader.removeOTPListener();
+  }
 }
