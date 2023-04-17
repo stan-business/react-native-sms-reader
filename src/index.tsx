@@ -11,7 +11,7 @@ const isTurboModuleEnabled = global.__turboModuleProxy != null;
 
 const SmsReaderModule = isTurboModuleEnabled
   ? require('./NativeSmsReader').default
-  : NativeModules.SmsReader;
+  : NativeModules.RNSMSReader;
 
 const RNSMSReader = SmsReaderModule
   ? SmsReaderModule

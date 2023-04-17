@@ -1,6 +1,6 @@
-#import "SmsReader.h"
+#import "RNSMSReader.h"
 
-@implementation SmsReader
+@implementation RNSMSReader
 RCT_EXPORT_MODULE()
 
 // Example method

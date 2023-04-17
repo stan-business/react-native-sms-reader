@@ -2,7 +2,8 @@ import type { TurboModule } from 'react-native';
 import { TurboModuleRegistry } from 'react-native';
 
 export interface Spec extends TurboModule {
-  multiply(a: number, b: number): Promise<number>;
+  listenOTP(sender: string): void;
+  removeOTPListener(): void;
 }
 
-export default TurboModuleRegistry.getEnforcing<Spec>('SmsReader');
+export default TurboModuleRegistry.getEnforcing<Spec>('RNSMSReader');
